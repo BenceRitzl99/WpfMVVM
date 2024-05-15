@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfMVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMVVM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Színek"></TextBlock>
+        <StackPanel Grid.Row="1">
+            <RadioButton IsChecked="True" Command="{Binding GreenViewCommand}" Content="Zöld"></RadioButton>
+            <RadioButton Command="{Binding YellowViewCommand}" Content="Sárga"></RadioButton>
+            <RadioButton Command="{Binding PurpleViewCommand}" Content="Lila"></RadioButton>
+            <RadioButton Content="Kilépés"></RadioButton>
+        </StackPanel>
+        <ContentControl Content="{Binding CurrentView}" Grid.Row="1" Grid.Column="1"></ContentControl>
+        
+    </Grid>
+</Window>
